@@ -547,6 +547,10 @@ public class RNAppAuthModule extends ReactContextBaseJavaModule implements Activ
                 authRequestBuilder.setPrompt(additionalParametersMap.get("prompt"));
                 additionalParametersMap.remove("prompt");
             }
+            if (additionalParametersMap.containsKey("response_type")) {
+                authRequestBuilder.setResponseType(additionalParametersMap.get("response_type"));
+                additionalParametersMap.remove("response_type");
+            }
 
             authRequestBuilder.setAdditionalParameters(additionalParametersMap);
         }
